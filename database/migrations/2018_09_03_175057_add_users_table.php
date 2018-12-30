@@ -14,14 +14,14 @@ class AddUsersTable extends Migration
      public function up()
 {
     Schema::table('users', function($table) {
-        $table->string('role');
+        $table->string('role')->default('user');
     });
 }
 
 public function down()
 {
     Schema::table('users', function($table) {
-        $table->dropColumn('role');
+        $table->dropColumn('role')->default('user');
     });
 }
 }
